@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ["*"]
 
 if DEBUG:
     INTERNAL_IPS = [
-        "192.168.1.4",
+        "192.168.31.117",
         "127.0.0.1",
     ]
 
@@ -202,3 +202,8 @@ CACHES = {
         },
     }
 }
+
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_RESULT_BACKEND = "redis://localhost:6379"
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = "var/email-messages/"
